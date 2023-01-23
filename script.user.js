@@ -14,9 +14,14 @@
   $(function () {
       'use strict';
 
+      // Wait for webpage to fully load
       $( document ).ready(function() {
 
+      // Force wallboard into fullscreen
       $('#fullscreenButton').click();
+        
+      // Hide mouse from screen
+      $('body').css('cursor', 'none');
 
       function refreshAt(hours, minutes, seconds) {
           var now = new Date();
