@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Puzzel Wallboard Anti-Tamper and Session fix
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.1.1
 // @description  Solves the issue with colleagues tampering with wallboards and prevents their session from expiring.
 // @author       Benjamin Jørgensen (Dunkstormen)
 // @match        https://admin.puzzel.com/admin/RealtimeWallboard/Index
@@ -18,7 +18,7 @@
 
       $('#fullscreenButton').click();
 
-      function refreshAt8(hours, minutes, seconds) {
+      function refreshAt(hours, minutes, seconds) {
           var now = new Date();
           var then = new Date();
 
@@ -35,25 +35,8 @@
           setTimeout(function() { window.location.reload(true); }, timeout);
       }
 
-      function refreshAt20(hours, minutes, seconds) {
-          var now = new Date();
-          var then = new Date();
-
-          if(now.getHours() > hours ||
-             (now.getHours() == hours && now.getMinutes() > minutes) ||
-             now.getHours() == hours && now.getMinutes() == minutes && now.getSeconds() >= seconds) {
-              then.setDate(now.getDate() + 1);
-          }
-          then.setHours(hours);
-          then.setMinutes(minutes);
-          then.setSeconds(seconds);
-
-          var timeout = (then.getTime() - now.getTime());
-          setTimeout(function() { window.location.reload(true); }, timeout);
-      }
-
-          refreshAt8(8,0,0);
-          refreshAt20(20,0,0);
+          refreshAt(8,0,0);
+          refreshAt(20,0,0);
 
     });
   });
