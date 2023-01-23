@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Puzzel Wallboard Anti-Tamper and Session fix
 // @namespace    http://tampermonkey.net/
-// @version      0.1.3
+// @version      0.1.4
 // @description  Solves the issue with colleagues tampering with wallboards and prevents their session from expiring.
 // @author       Benjamin Jørgensen (Dunkstormen)
 // @match        https://admin.puzzel.com/admin/RealtimeWallboard/Index
