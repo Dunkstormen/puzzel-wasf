@@ -19,9 +19,6 @@
 
       // Force wallboard into fullscreen
       $('#fullscreenButton').click();
-        
-      // Hide mouse from screen
-      $('*').css('cursor', 'none');
 
       function refreshAt(hours, minutes, seconds) {
           var now = new Date();
