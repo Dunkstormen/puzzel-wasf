@@ -20,6 +20,9 @@
 
       // Force wallboard into fullscreen
       $('#fullscreenButton').click();
+        
+      // Removing "Settings" button
+      $('button.grey').remove();
 
       function refreshAt(hours, minutes, seconds) {
           var now = new Date();
